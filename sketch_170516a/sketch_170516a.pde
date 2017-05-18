@@ -11,9 +11,9 @@ void setup(){
 boolean clicked = false;
 
 int shapex1 = 20;
-int shapex2 = 40;
+int shapex2 = shapex1 + 20;
 int shapey1 = 20;
-int shapey2 = 40;
+int shapey2 = shapey1 + 20;
 
 
 
@@ -28,16 +28,12 @@ void speed(){
 
 void attract(){
   shapex1 = shapex1 + mouseX;
-  shapex2 = shapex2 + mouseX;
   shapey1 = shapey1 + mouseY;
-  shapey2 = shapey2 + mouseY;
 }
 
 void repel(){
   shapex1 = shapex1 - mouseX;
-  shapex2 = shapex2 - mouseX;
   shapey1 = shapey1 - mouseY;
-  shapey2 = shapey2 - mouseY;
 }
 
 void mouseClicked(){
