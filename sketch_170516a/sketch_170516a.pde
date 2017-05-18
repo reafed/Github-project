@@ -10,12 +10,13 @@ void setup(){
 
 boolean clicked = false;
 
-int shapex1 = 20;
-int shapex2 = shapex1 + 20;
-int shapey1 = 20;
-int shapey2 = shapey1 + 20;
+float shapex1 = 20;
+float shapex2 = shapex1 + 20;
+float shapey1 = 20;
+float shapey2 = shapey1 + 20;
 
-
+float speed = 2;
+float friction = 0.1;
 
 void shape1(){
   rect(shapex1,shapey1,shapex2,shapey2);
@@ -23,12 +24,11 @@ void shape1(){
 
 void speed(){
   
-
 }
 
 void attract(){
-  shapex1 = shapex1 + mouseX;
-  shapey1 = shapey1 + mouseY;
+  shapex1 = shapex1 + (mouseX * friction);
+  shapey1 = shapey1 + (mouseY * friction);
 }
 
 void repel(){
@@ -43,9 +43,11 @@ void mouseClicked(){
 void draw(){
   background(200);
   shape1();
-  if(clicked == true){
+  if (keyPressed) {
+    if (key == 'b' || key == 'B') { 
   attract();
   clicked = false;
 }
-
+  redraw();
+}
 }
